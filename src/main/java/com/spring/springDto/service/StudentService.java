@@ -36,9 +36,12 @@ public class StudentService {
     }
 
     public StudentResponse getStudentName(int id){
-        Student student = studentRepo.findById(id).get();
-        StudentResponse response = modelMapper.map(student,StudentResponse.class); //new StudentResponse(student.getName());
+        Student student = studentRepo.findById(id).orElseThrow();
+        //StudentResponse response = modelMapper.map(student,StudentResponse.class); //new StudentResponse(student.getName());
 
-        return response;
+        StudentResponse studentResponse = new StudentResponse();
+        studentResponse.setPhone("01122310599");
+        modelMapper.map(student,studentResponse);
+        return studentResponse;
     }
 }

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name="student")
 @Data
@@ -21,4 +23,7 @@ public class Student {
 
     @Column
     private String age;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "student")
+    private List<Course> courses;
 }
