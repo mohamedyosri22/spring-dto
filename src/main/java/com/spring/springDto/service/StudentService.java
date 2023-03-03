@@ -44,4 +44,8 @@ public class StudentService {
         modelMapper.map(student,studentResponse);
         return studentResponse;
     }
+
+    public List<Student> getStudentsR(){
+        return studentRepo.findAll();
+    }
 }

@@ -22,6 +22,11 @@ public class StudentController {
         return studentService.getStudentsAll();
     }
 
+    @GetMapping("/all-r")
+    public List<Student> getAllStudents(){
+        return studentService.getStudentsR();
+    }
+
     @GetMapping("/id-name")
     public List<StudentDto> getIdAndName(){
         return studentService.getStudents();

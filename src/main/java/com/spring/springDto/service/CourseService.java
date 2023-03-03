@@ -2,9 +2,7 @@ package com.spring.springDto.service;
 
 import com.spring.springDto.Repository.CourseRepo;
 import com.spring.springDto.dto.CourseDto;
-import com.spring.springDto.dto.StudentDto;
 import com.spring.springDto.model.Course;
-import com.spring.springDto.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +27,8 @@ public class CourseService {
         }
 
         return courseDtos;
+    }
+    public List<Course> getCourses(){
+        return courseRepo.findAll();
     }
 }

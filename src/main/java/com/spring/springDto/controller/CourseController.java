@@ -21,6 +21,11 @@ public class CourseController {
         return courseService.getCoursesAll();
     }
 
+    @GetMapping("/all-r")
+    public List<Course> getAllCourses(){
+        return courseService.getCourses();
+    }
+
     @GetMapping("/id-name")
     public List<CourseDto> getIdAndName(){
         return courseService.getIdAndName();

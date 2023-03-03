@@ -24,6 +24,6 @@ public class Student {
     @Column
     private String age;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "student")
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "student")
     private List<Course> courses;
 }
